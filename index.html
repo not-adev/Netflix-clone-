@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+    rel="stylesheet">
+  <script>
+
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .main-div {
+
+      background-image: url("bg.jpg");
+      background-position: center center;
+      background-size: max(1300px, 100vw);
+      background-repeat: no-repeat;
+      height: max(90vh, 500px);
+      width: 100%;
+      position: relative;
+
+
+    }
+
+    .box {
+      height: max(90vh, 500px);
+      width: 100%;
+      opacity: 0.75;
+      background-color: black;
+      position: absolute;
+      top: 0;
+    }
+
+    nav {
+      margin: auto;
+      max-width: 80vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-size: 100vw;
+      padding-top: 10px;
+      height: 62px;
+    }
+
+    nav img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .buttons {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sign-button {
+      display: flex;
+      justify-content: right;
+      gap: 5px;
+
+
+    }
+
+    .english-button {
+      color: white;
+      background-color: black;
+      text-decoration: none;
+    }
+
+    .content {
+
+      height: calc(100% - 72px);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 0 30px;
+
+    }
+
+    .line {
+      background-color: grey;
+      height: 5px;
+    }
+
+    .btn {
+      padding: 8px 15px;
+      font-weight: bold;
+      font-size: 15px;
+      border-radius: 4px;
+      border: none;
+
+    }
+
+    .btn-red {
+      background-color: #d91414;
+      color: white;
+      margin-left: 5px;
+    }
+
+    .btn-english {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white;
+
+    }
+
+    .btn-red-sm {
+      padding: 12px 20px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    input {
+      padding: 12px 20px;
+      font-size: 20px;
+      background-color: rgba(23, 23, 23, 0.3);
+      border: .2px solid grey;
+      border-radius: 5px;
+      color: white;
+    }
+
+    main {
+      max-width: 85vw;
+      margin: auto
+    }
+
+    .boxe-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .grid-item {
+      border: 2px solid #f3eaea;
+      border-radius: 10px;
+      padding: 10px 15px;
+      min-height: 129px;
+      position: relative;
+    }
+
+    .invert {
+      filter: invert(1);
+    }
+
+    .main-text {
+      font-size: 17px;
+      color: white;
+      padding: 5px 0;
+      margin-bottom: 5px;
+    }
+
+    .sub-text {
+      font-size: 12px;
+      color: #b8b8b8;
+    }
+
+    .grid-heading {
+      grid-column: 1/3
+    }
+
+    .grid-item img {
+      position: absolute;
+      bottom: 9px;
+      right: 9px;
+
+    }
+
+    .trending-text {
+
+      font-size: 20px;
+    }
+
+    .show-container {
+      overflow: hidden;
+      display: flex;
+      margin: auto;
+      max-width: 70vw;
+      gap: 15px;
+      border: 2px solid white;
+    }
+
+    .shows {
+      display: inline;
+      border-radius: 4px;
+      height: 20vh;
+      background-color: white;
+      width: 40px;
+      color: black;
+    }
+
+    .multiple-boxe {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .box-items {
+      border-radius: 4px;
+      background-color: green;
+      margin: auto;
+
+    }
+
+    /* .question-section {
+   gap:   display: flex;
+      flex-direction: column;
+      5p0px; 
+    } */
+
+    h2 {
+      padding: 15px 0;
+    }
+
+    .question-item {
+      background-color: #4e4f4c;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 25px;
+      height: 70px;
+
+    }
+
+    .answer {
+      background-color: #4e4f4c;
+      margin: 10px 0px;
+      padding: 9px 19px;
+      display: none;
+    }
+
+    .footter-up {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    fotter {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 10px;
+      margin: 20px 0;
+
+    }
+
+    @media screen and (max-width: 480px) {
+      .main-text {
+        font-size: 10px;
+      }
+
+      .sub-text {
+        font-size: 8px;
+      }
+    }
+
+
+    .fotter-item {
+      background-color: red;
+      border: 1px solid green;
+      margin-bottom: 5px;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    nav span {
+      font-size: 50px;
+      color: white;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      z-index: 10;
+    }
+  </style>
+  <title>Netflix clone </title>
+
+</head>
+
+<body>
+  <div class="main-div">
+
+
+    <nav>
+
+      <span class="Setflix">
+        Netflix
+      </span>
+      <div class="buttons">
+        <button class="btn btn-english " type="dropdown">English <span></span></button>
+        <button class="btn btn-red" onclick="get_stated" id="button">Sign In </button>
+      </div>
+    </nav>
+    <div class="box">
+
+    </div>
+    <div class="content">
+      <span
+        style="font-size : 45px ; font-weight :900 ; text-align:center; font-family: Roboyo, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; ">Unlimited
+        movies, TV </span>
+
+      <span style="font-size : 35px ; font-weight :900 ; text-align:center;">show and more </span>
+
+      <span style="font-size :23px ;text-align:center;">Starts at ₹149. Cancel at any time.</span>
+
+      <span style="text-align:center">Ready to watch? Enter your email to create or restart your membership.</span>
+
+      <div>
+        <input type="text" placeholder="Enter mail ">
+        <button class="btn btn-red btn-red-sm"> <a href="page2.html" style="text-decoration: none; color: inherit;">Get
+            Started</a>
+          <div>
+
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <main>
+    <section class="reaaons-to-join">
+
+      <div class="boxe-container ">
+        <h2 class="grid-heading">More reasons to join </h2>
+        <div class="grid-item">
+          <div class="main-text">Enjoy on your tv</div>
+          <div class="sub-text"> Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+          </div><img src="plus.svg" alt="img" class="invert">
+          <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg>
+        </div>
+        <div class="grid-item">
+          <div class="main-text">Download your shows to watch offline</div>
+          <div class="sub-text"> Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+          </div><img src="plus.svg" alt="img" class="invert">
+        </div>
+        <div class="grid-item">
+          <div class="main-text">Watch everywhere</div>
+          <div class="sub-text"> Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</div><img
+            src="plus.svg" alt="img" class="invert">
+        </div>
+        <div class="grid-item">
+          <div class="main-text">Create profiles for kids</div>
+          <div class="sub-text">Send kids on adventures with their favourite characters in a space made just for them —
+            free with your membership.</div><img src="plus.svg" alt="img" class="invert">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="Question-section">
+      <h2>Frequently Asked Question </h2>
+      <div class="question-item">what is NETFLICKS <span onclick="show(0)"><svg xmlns="http://www.w3.org/2000/svg"
+            width="30px" heigth="10px" background-color="white" viewBox="0 0 24 24" id="plus">
+            <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg> </span>
+      </div>
+      <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt aliquam, provident
+        praesentium modi et a assumenda sequi iusto doloribus, maxime vitae alias esse deleniti distinctio nulla
+        dignissimos quis id?</div>
+
+      <div class="question-item">How much does netflix cost <span onclick="show(1)"> <svg
+            xmlns="http://www.w3.org/2000/svg" width="30px" heigth="10px" background-color="white" viewBox="0 0 24 24"
+            id="plus">
+            <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg> </span></div>
+      <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt aliquam, provident
+        praesentium modi et a assumenda sequi iusto doloribus, maxime vitae alias esse deleniti distinctio nulla
+        dignissimos quis id?</div>
+
+      <div class="question-item"> where can I watch <span onclick="show(2)"> <svg xmlns="http://www.w3.org/2000/svg"
+            width="30px" heigth="10px" background-color="white" viewBox="0 0 24 24" id="plus">
+            <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg></span> </div>
+      <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt aliquam, provident
+        praesentium modi et a assumenda sequi iusto doloribus, maxime vitae alias esse deleniti distinctio nulla
+        dignissimos quis id?</div>
+
+      <div class="question-item">How do I cancel <span onclick="show(3)"> <svg xmlns="http://www.w3.org/2000/svg"
+            width="30px" heigth="10px" background-color="white" viewBox="0 0 24 24" id="plus">
+            <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg></span> </div>
+      <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt aliquam, provident
+        praesentium modi et a assumenda sequi iusto doloribus, maxime vitae alias esse deleniti distinctio nulla
+        dignissimos quis id?</div>
+
+      <div class="question-item">what can I watch on netflix <span onclick="show(4)"> <svg
+            xmlns="http://www.w3.org/2000/svg" width="30px" heigth="10px" background-color="white" viewBox="0 0 24 24"
+            id="plus">
+            <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg> </span> </div>
+      <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt aliquam, provident
+        praesentium modi et a assumenda sequi iusto doloribus, maxime vitae alias esse deleniti distinctio nulla
+        dignissimos quis id?</div>
+
+      <div class="question-item">Is netflix good kids <span onclick="show(5)"> <svg xmlns="http://www.w3.org/2000/svg"
+            width="30px" heigth="10px" background-color="white" viewBox="0 0 24 24" id="plus">
+            <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+          </svg> </span> </div>
+      <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro incidunt aliquam, provident
+        praesentium modi et a assumenda sequi iusto doloribus, maxime vitae alias esse deleniti distinctio nulla
+        dignissimos quis id?</div>
+
+    </section>
+
+
+
+    <div class="footter-up">
+      <div>
+        Ready to watch? Enter your email to create or restart your membership.
+      </div>
+      <div>
+        <input type="text" placeholder="Enter mail ">
+        <button class="btn btn-red btn-red-sm"> Get Started</button>
+      </div>
+    </div>
+
+
+
+  </main>
+
+
+
+
+</body>
+<script>
+
+  let element = document.getElementsByClassName("answer");
+  function show(number) {
+    console.log(element[number].style.display)
+    if (element[number].style.display == "block")
+      element[number].style.display = "none";
+    else element[number].style.display = "block";
+
+
+
+  }
+
+
+</script>
+
+</html>

@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.main-div {
+  background-image: url("bg.jpg");
+  height: 80vh;
+  width: 100%;
+  max-width: 80%;
+   
+}
